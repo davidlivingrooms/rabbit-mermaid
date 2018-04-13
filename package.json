@@ -1,0 +1,65 @@
+{
+  "name": "rabbit-mermaid",
+  "version": "0.0.0",
+  "description": "Generate markdown flowcharts of your rabbit topology.",
+  "homepage": "",
+  "author": {
+    "name": "David Salas",
+    "email": "davidlivingrooms@gmail.com",
+    "url": ""
+  },
+  "files": ["lib"],
+  "main": "lib/index.js",
+  "keywords": [
+    "rabbit rabbitmq amqp topology charts flowchart mermaid markdown gitlab github "
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-xo": "^0.20.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "jest": "^22.0.6",
+    "lint-staged": "^6.1.1",
+    "nsp": "^2.8.0",
+    "prettier": "^1.12.0",
+    "pretty-quick": "^1.4.1"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "scripts": {
+    "format": "prettier --write lib/*",
+    "prepublishOnly": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged && pretty-quick --staged",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
+  },
+  "eslintConfig": {
+    "extends": ["xo", "prettier"],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": ["prettier"]
+  },
+  "repository": "https://github.com/davidlivingrooms/rabbit-mermaid.git",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "MIT"
+}

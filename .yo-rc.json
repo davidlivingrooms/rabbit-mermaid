@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "David Salas",
+      "authorEmail": "davidlivingrooms@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
