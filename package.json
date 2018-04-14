@@ -30,7 +30,7 @@
     "npm": ">= 4.0.0"
   },
   "scripts": {
-    "format": "prettier --write lib/*",
+    "format": "prettier --write --single-quote lib/*/**.js",
     "prepublishOnly": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged && pretty-quick --staged",
