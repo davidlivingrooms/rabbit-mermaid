@@ -30,7 +30,7 @@
     "npm": ">= 4.0.0"
   },
   "scripts": {
-    "format": "prettier --write --single-quote lib/*/**.js",
+    "format": "prettier --write --single-quote lib/**/*.js",
     "prepublishOnly": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged && pretty-quick --staged",
@@ -38,7 +38,7 @@
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.{js,css,md,json}": ["prettier --write", "git add"]
   },
   "eslintConfig": {
     "extends": ["xo", "prettier"],
