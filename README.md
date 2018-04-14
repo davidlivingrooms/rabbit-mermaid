@@ -11,9 +11,15 @@ $ npm install --save rabbit-mermaid
 ## Usage
 
 ```js
-const rabbitMermaid = require("rabbit-mermaid");
+const rabbitmermaid = require("rabbit-mermaid");
 
-rabbitMermaid("Rainbow");
+const topology = {};
+
+rabbitmermaid(topology);
+
+/**
+ *
+ **/
 ```
 
 ## License
