@@ -1,6 +1,6 @@
 {
   "name": "rabbit-mermaid",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generate markdown flowcharts of your rabbit topology.",
   "homepage": "",
   "author": {
@@ -34,7 +34,7 @@
     "prepublishOnly": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
