@@ -1,6 +1,10 @@
 # rabbit-mermaid [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-> Generate markdown flowcharts of your rabbit topology.
+> Generate markdown flowcharts of your rabbitmq topology.
+
+rabbit-mermaid takes your rabbitmq topology files and turns them into
+markdown flowcharts
+Direct, fanout, and topic based exchanges are supported at the moment.
 
 ## Installation
 
@@ -12,14 +16,9 @@ $ npm install --save rabbit-mermaid
 
 ```js
 const rabbitmermaid = require("rabbit-mermaid");
-
-const topology = {};
+const topology = require("./topology.json");
 
 rabbitmermaid(topology);
-
-/**
- *
- **/
 ```
 
 ## License

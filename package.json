@@ -45,16 +45,7 @@
     "env": {
       "jest": true,
       "node": true
-    },
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "printWidth": 90
-        }
-      ]
-    },
-    "plugins": ["prettier"]
+    }
   },
   "repository": "https://github.com/davidlivingrooms/rabbit-mermaid.git",
   "jest": {
