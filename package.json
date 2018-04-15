@@ -34,7 +34,8 @@
     "prepublishOnly": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
@@ -51,5 +52,8 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "capitalize": "^1.0.0"
+  }
 }

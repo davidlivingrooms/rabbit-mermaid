@@ -3,8 +3,7 @@
 > Generate markdown flowcharts of your rabbitmq topology.
 
 rabbit-mermaid takes your rabbitmq topology files and turns them into
-markdown flowcharts
-Direct, fanout, and topic based exchanges are supported at the moment.
+markdown flowcharts. Direct, fanout, and topic-based exchanges are supported.
 
 ## Installation
 
