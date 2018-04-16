@@ -1,7 +1,7 @@
 {
   "exchanges": [
     {
-      "name": "user",
+      "name": "images",
       "vhost": "/",
       "type": "topic",
       "durable": true,
@@ -12,21 +12,28 @@
   ],
   "queues": [
     {
-      "name": "user.get",
+      "name": "archiver1",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
       "arguments": {}
     },
     {
-      "name": "user.update",
+      "name": "archiver2",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
       "arguments": {}
     },
     {
-      "name": "user.create",
+      "name": "cropper",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "resizer",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
@@ -35,27 +42,35 @@
   ],
   "bindings": [
     {
-      "source": "user",
+      "source": "images",
       "vhost": "/",
-      "destination": "update",
+      "destination": "archiver1",
       "destination_type": "queue",
-      "routing_key": "user.update",
+      "routing_key": "*.archive",
       "arguments": {}
     },
     {
-      "source": "user",
+      "source": "images",
       "vhost": "/",
-      "destination": "user.get",
+      "destination": "archiver2",
       "destination_type": "queue",
-      "routing_key": "user.get",
+      "routing_key": "*.archive",
       "arguments": {}
     },
     {
-      "source": "user",
+      "source": "images",
       "vhost": "/",
-      "destination": "user.create",
+      "destination": "cropper",
       "destination_type": "queue",
-      "routing_key": "user.create",
+      "routing_key": "*.crop",
+      "arguments": {}
+    },
+    {
+      "source": "images",
+      "vhost": "/",
+      "destination": "resizer",
+      "destination_type": "queue",
+      "routing_key": "*.resize",
       "arguments": {}
     }
   ]
