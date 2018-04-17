@@ -1,0 +1,231 @@
+{
+  "exchanges": [
+    {
+      "name": "JPEG",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "PNG",
+      "vhost": "/",
+      "type": "fanout",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "GIF",
+      "vhost": "/",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "queues": [
+    {
+      "name": "jarchiver1",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "jarchiver2",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "jcropper",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "jresizer",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "parchiver1",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "parchiver2",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "pcropper",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "presizer",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "garchiver1",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "garchiver2",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "gcropper",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "gresizer",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "JPEG",
+      "vhost": "/",
+      "destination": "PNG",
+      "destination_type": "exchange",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "PNG",
+      "vhost": "/",
+      "destination": "GIF",
+      "destination_type": "exchange",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "JPEG",
+      "vhost": "/",
+      "destination": "jarchiver1",
+      "destination_type": "queue",
+      "routing_key": "images.archive",
+      "arguments": {}
+    },
+    {
+      "source": "JPEG",
+      "vhost": "/",
+      "destination": "jarchiver2",
+      "destination_type": "queue",
+      "routing_key": "images.archive",
+      "arguments": {}
+    },
+    {
+      "source": "JPEG",
+      "vhost": "/",
+      "destination": "jcropper",
+      "destination_type": "queue",
+      "routing_key": "images.crop",
+      "arguments": {}
+    },
+    {
+      "source": "JPEG",
+      "vhost": "/",
+      "destination": "jresizer",
+      "destination_type": "queue",
+      "routing_key": "images.resize",
+      "arguments": {}
+    },
+    {
+      "source": "PNG",
+      "vhost": "/",
+      "destination": "parchiver1",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "PNG",
+      "vhost": "/",
+      "destination": "parchiver2",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "PNG",
+      "vhost": "/",
+      "destination": "pcropper",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "PNG",
+      "vhost": "/",
+      "destination": "presizer",
+      "destination_type": "queue",
+      "routing_key": "",
+      "arguments": {}
+    },
+    {
+      "source": "GIF",
+      "vhost": "/",
+      "destination": "garchiver1",
+      "destination_type": "queue",
+      "routing_key": "*.archive",
+      "arguments": {}
+    },
+    {
+      "source": "GIF",
+      "vhost": "/",
+      "destination": "garchiver2",
+      "destination_type": "queue",
+      "routing_key": "*.archive",
+      "arguments": {}
+    },
+    {
+      "source": "GIF",
+      "vhost": "/",
+      "destination": "gcropper",
+      "destination_type": "queue",
+      "routing_key": "*.crop",
+      "arguments": {}
+    },
+    {
+      "source": "GIF",
+      "vhost": "/",
+      "destination": "gresizer",
+      "destination_type": "queue",
+      "routing_key": "*.resize",
+      "arguments": {}
+    }
+  ]
+}
