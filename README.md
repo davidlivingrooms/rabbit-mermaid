@@ -30,5 +30,5 @@ MIT © [David Salas]()
 [travis-url]: https://travis-ci.org/davidlivingrooms/rabbit-mermaid
 [daviddm-image]: https://david-dm.org/davidlivingrooms/rabbit-mermaid.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/davidlivingrooms/rabbit-mermaid
-[coveralls-image]: https://coveralls.io/repos/davidlivingrooms/rabbit-mermaid/badge.svg
-[coveralls-url]: https://coveralls.io/r/davidlivingrooms/rabbit-mermaid
+[coveralls-image]: https://coveralls.io/repos/davidlivingrooms/rabbit-mermaid/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/r/davidlivingrooms/rabbit-mermaid?branch=master
