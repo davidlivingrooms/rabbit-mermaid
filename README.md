@@ -14,10 +14,10 @@ $ npm install --save rabbit-mermaid
 ## Usage
 
 ```js
-const rabbitmermaid = require("rabbit-mermaid");
+const { MermaidGenerator } = require("rabbit-mermaid");
 const topology = require("./topology.json");
-
-rabbitmermaid(topology);
+const mermaidGenerator = new MermaidGenerator(topology);
+mermaidGenerator.generate();
 ```
 
 ## License

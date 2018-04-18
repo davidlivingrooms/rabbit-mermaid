@@ -1,0 +1,94 @@
+{
+  "exchanges": [
+    {
+      "name": "images",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "breaker",
+      "vhost": "/",
+      "type": "header",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "queues": [
+    {
+      "name": "archiver1",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "archiver2",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "cropper",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "resizer",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "images",
+      "vhost": "/",
+      "destination": "archiver1",
+      "destination_type": "queue",
+      "routing_key": "images.archive",
+      "arguments": {}
+    },
+    {
+      "source": "breaker",
+      "vhost": "/",
+      "destination": "archiver1",
+      "destination_type": "queue",
+      "routing_key": "images.archive",
+      "arguments": {}
+    },
+    {
+      "source": "images",
+      "vhost": "/",
+      "destination": "archiver2",
+      "destination_type": "queue",
+      "routing_key": "images.archive",
+      "arguments": {}
+    },
+    {
+      "source": "images",
+      "vhost": "/",
+      "destination": "cropper",
+      "destination_type": "queue",
+      "routing_key": "images.crop",
+      "arguments": {}
+    },
+    {
+      "source": "images",
+      "vhost": "/",
+      "destination": "resizer",
+      "destination_type": "queue",
+      "routing_key": "images.resize",
+      "arguments": {}
+    }
+  ]
+}
