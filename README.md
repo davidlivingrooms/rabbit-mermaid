@@ -20,6 +20,20 @@ const mermaidGenerator = new MermaidGenerator(topology);
 mermaidGenerator.generate();
 ```
 
+## Filtering
+
+The `exchanges` option will let you specify exactly which exchanges should show up in the generated output.
+_Please note that exchange to exchange bindings will be excluded if both exchanges are not specified_. This is intentional to
+reduce noise in large topologies with many dependencies.
+
+```js
+const mermaidGenerator = new MermaidGenerator(topology);
+const opts = {
+  exchanges: ["JPEG"]
+};
+mermaidGenerator.generate(opts);
+```
+
 ## License
 
 MIT © [David Salas]()
