@@ -12,7 +12,7 @@
     {
       "name": "breaker",
       "vhost": "/",
-      "type": "header",
+      "type": "breaker",
       "durable": true,
       "auto_delete": false,
       "internal": false,
